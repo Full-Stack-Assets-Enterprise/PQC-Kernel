@@ -1,0 +1,62 @@
+{
+  "ruleset_id": "openssl-pkcs11-linux-source-elf",
+  "version": "0.1.0",
+  "description": "High-signal OpenSSL and PKCS#11 API symbols for the assessment-operated v0.1 detector.",
+  "rules": [
+    {"id":"openssl.rsa_sign","symbol":"RSA_sign","provider":"OPENSSL","algorithm":"RSA","primitive_family":"DIGITAL_SIGNATURE","operation":"SIGN","confidence":0.98},
+    {"id":"openssl.rsa_verify","symbol":"RSA_verify","provider":"OPENSSL","algorithm":"RSA","primitive_family":"DIGITAL_SIGNATURE","operation":"VERIFY","confidence":0.98},
+    {"id":"openssl.rsa_public_encrypt","symbol":"RSA_public_encrypt","provider":"OPENSSL","algorithm":"RSA","primitive_family":"PUBLIC_KEY_ENCRYPTION","operation":"ENCRYPT","confidence":0.98},
+    {"id":"openssl.rsa_private_decrypt","symbol":"RSA_private_decrypt","provider":"OPENSSL","algorithm":"RSA","primitive_family":"PUBLIC_KEY_ENCRYPTION","operation":"DECRYPT","confidence":0.98},
+    {"id":"openssl.rsa_generate_key_ex","symbol":"RSA_generate_key_ex","provider":"OPENSSL","algorithm":"RSA","primitive_family":"KEY_GENERATION","operation":"GENERATE_KEY","confidence":0.98},
+    {"id":"openssl.ecdsa_do_sign","symbol":"ECDSA_do_sign","provider":"OPENSSL","algorithm":"ECDSA","primitive_family":"DIGITAL_SIGNATURE","operation":"SIGN","confidence":0.98},
+    {"id":"openssl.ecdsa_do_verify","symbol":"ECDSA_do_verify","provider":"OPENSSL","algorithm":"ECDSA","primitive_family":"DIGITAL_SIGNATURE","operation":"VERIFY","confidence":0.98},
+    {"id":"openssl.ecdh_compute_key","symbol":"ECDH_compute_key","provider":"OPENSSL","algorithm":"ECDH","primitive_family":"KEY_ESTABLISHMENT","operation":"DERIVE_KEY","confidence":0.98},
+    {"id":"openssl.dh_generate_key","symbol":"DH_generate_key","provider":"OPENSSL","algorithm":"DH","primitive_family":"KEY_GENERATION","operation":"GENERATE_KEY","confidence":0.98},
+    {"id":"openssl.dh_compute_key","symbol":"DH_compute_key","provider":"OPENSSL","algorithm":"DH","primitive_family":"KEY_ESTABLISHMENT","operation":"DERIVE_KEY","confidence":0.98},
+    {"id":"openssl.evp_pkey_ctx_new_id","symbol":"EVP_PKEY_CTX_new_id","provider":"OPENSSL","algorithm":"UNKNOWN_ASYMMETRIC","primitive_family":"PUBLIC_KEY","operation":"CREATE_CONTEXT","confidence":0.86,
+      "argument_markers": {
+        "EVP_PKEY_RSA":{"algorithm":"RSA","primitive_family":"PUBLIC_KEY","confidence":0.98},
+        "EVP_PKEY_EC":{"algorithm":"EC","primitive_family":"PUBLIC_KEY","confidence":0.96},
+        "EVP_PKEY_DH":{"algorithm":"DH","primitive_family":"KEY_ESTABLISHMENT","confidence":0.96}
+      }
+    },
+    {"id":"openssl.evp_pkey_ctx_new_from_name","symbol":"EVP_PKEY_CTX_new_from_name","provider":"OPENSSL","algorithm":"UNKNOWN_ASYMMETRIC","primitive_family":"PUBLIC_KEY","operation":"CREATE_CONTEXT","confidence":0.86,
+      "argument_markers": {
+        "ML-KEM":{"algorithm":"ML-KEM","primitive_family":"KEY_ESTABLISHMENT","confidence":0.96},
+        "ML-DSA":{"algorithm":"ML-DSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.96},
+        "SLH-DSA":{"algorithm":"SLH-DSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.96},
+        "RSA":{"algorithm":"RSA","primitive_family":"PUBLIC_KEY","confidence":0.92},
+        "EC":{"algorithm":"EC","primitive_family":"PUBLIC_KEY","confidence":0.88}
+      }
+    },
+    {"id":"openssl.evp_pkey_encrypt","symbol":"EVP_PKEY_encrypt","provider":"OPENSSL","algorithm":"UNKNOWN_ASYMMETRIC","primitive_family":"PUBLIC_KEY_ENCRYPTION","operation":"ENCRYPT","confidence":0.90},
+    {"id":"openssl.evp_pkey_decrypt","symbol":"EVP_PKEY_decrypt","provider":"OPENSSL","algorithm":"UNKNOWN_ASYMMETRIC","primitive_family":"PUBLIC_KEY_ENCRYPTION","operation":"DECRYPT","confidence":0.90},
+    {"id":"openssl.evp_pkey_derive","symbol":"EVP_PKEY_derive","provider":"OPENSSL","algorithm":"UNKNOWN_KEY_ESTABLISHMENT","primitive_family":"KEY_ESTABLISHMENT","operation":"DERIVE_KEY","confidence":0.90},
+    {"id":"openssl.evp_digest_sign_init","symbol":"EVP_DigestSignInit","provider":"OPENSSL","algorithm":"UNKNOWN_SIGNATURE","primitive_family":"DIGITAL_SIGNATURE","operation":"SIGN_INIT","confidence":0.90},
+    {"id":"openssl.evp_digest_verify_init","symbol":"EVP_DigestVerifyInit","provider":"OPENSSL","algorithm":"UNKNOWN_SIGNATURE","primitive_family":"DIGITAL_SIGNATURE","operation":"VERIFY_INIT","confidence":0.90},
+    {"id":"openssl.evp_signature_fetch","symbol":"EVP_SIGNATURE_fetch","provider":"OPENSSL","algorithm":"UNKNOWN_SIGNATURE","primitive_family":"DIGITAL_SIGNATURE","operation":"FETCH_IMPLEMENTATION","confidence":0.86,
+      "argument_markers": {
+        "ML-DSA":{"algorithm":"ML-DSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.96},
+        "SLH-DSA":{"algorithm":"SLH-DSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.96},
+        "RSA":{"algorithm":"RSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.92},
+        "ECDSA":{"algorithm":"ECDSA","primitive_family":"DIGITAL_SIGNATURE","confidence":0.92}
+      }
+    },
+    {"id":"openssl.evp_kem_fetch","symbol":"EVP_KEM_fetch","provider":"OPENSSL","algorithm":"UNKNOWN_KEM","primitive_family":"KEY_ESTABLISHMENT","operation":"FETCH_IMPLEMENTATION","confidence":0.86,
+      "argument_markers": {
+        "ML-KEM":{"algorithm":"ML-KEM","primitive_family":"KEY_ESTABLISHMENT","confidence":0.96}
+      }
+    },
+    {"id":"openssl.ossl_provider_load","symbol":"OSSL_PROVIDER_load","provider":"OPENSSL","algorithm":"PROVIDER_CONFIGURATION","primitive_family":"CRYPTO_PROVIDER","operation":"LOAD_PROVIDER","confidence":0.94},
+    {"id":"openssl.openssl_init_crypto","symbol":"OPENSSL_init_crypto","provider":"OPENSSL","algorithm":"PROVIDER_CONFIGURATION","primitive_family":"CRYPTO_PROVIDER","operation":"INITIALIZE","confidence":0.94},
+    {"id":"openssl.ssl_ctx_set_cipher_list","symbol":"SSL_CTX_set_cipher_list","provider":"OPENSSL","algorithm":"TLS_CIPHER_CONFIGURATION","primitive_family":"TLS_CONFIGURATION","operation":"CONFIGURE","confidence":0.92},
+    {"id":"pkcs11.c_generate_key_pair","symbol":"C_GenerateKeyPair","provider":"PKCS11","algorithm":"UNKNOWN_HSM_PUBLIC_KEY","primitive_family":"KEY_GENERATION","operation":"GENERATE_KEY_PAIR","confidence":0.94},
+    {"id":"pkcs11.c_sign_init","symbol":"C_SignInit","provider":"PKCS11","algorithm":"UNKNOWN_HSM_SIGNATURE","primitive_family":"DIGITAL_SIGNATURE","operation":"SIGN_INIT","confidence":0.94},
+    {"id":"pkcs11.c_verify_init","symbol":"C_VerifyInit","provider":"PKCS11","algorithm":"UNKNOWN_HSM_SIGNATURE","primitive_family":"DIGITAL_SIGNATURE","operation":"VERIFY_INIT","confidence":0.94},
+    {"id":"pkcs11.c_encrypt_init","symbol":"C_EncryptInit","provider":"PKCS11","algorithm":"UNKNOWN_HSM_ENCRYPTION","primitive_family":"ENCRYPTION","operation":"ENCRYPT_INIT","confidence":0.94},
+    {"id":"pkcs11.c_decrypt_init","symbol":"C_DecryptInit","provider":"PKCS11","algorithm":"UNKNOWN_HSM_ENCRYPTION","primitive_family":"ENCRYPTION","operation":"DECRYPT_INIT","confidence":0.94},
+    {"id":"pkcs11.c_derive_key","symbol":"C_DeriveKey","provider":"PKCS11","algorithm":"UNKNOWN_HSM_KEY_ESTABLISHMENT","primitive_family":"KEY_ESTABLISHMENT","operation":"DERIVE_KEY","confidence":0.94},
+    {"id":"pkcs11.c_wrap_key","symbol":"C_WrapKey","provider":"PKCS11","algorithm":"UNKNOWN_HSM_KEY_WRAP","primitive_family":"KEY_MANAGEMENT","operation":"WRAP_KEY","confidence":0.94},
+    {"id":"pkcs11.c_unwrap_key","symbol":"C_UnwrapKey","provider":"PKCS11","algorithm":"UNKNOWN_HSM_KEY_WRAP","primitive_family":"KEY_MANAGEMENT","operation":"UNWRAP_KEY","confidence":0.94}
+  ]
+}
