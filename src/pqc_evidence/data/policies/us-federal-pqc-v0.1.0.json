@@ -1,0 +1,56 @@
+{
+  "profile_id": "us-federal-pqc-transition-discovery",
+  "version": "0.1.0",
+  "as_of": "2026-08-29",
+  "title": "US Federal PQC Transition Discovery Profile",
+  "disclaimer": "Advisory discovery mapping only. A finding does not establish system scope, contract coverage, FIPS validation, correct implementation, or legal compliance.",
+  "sources": [
+    {
+      "id": "EO-14412",
+      "title": "Executive Order 14412 — Securing the Nation Against Advanced Cryptographic Attacks",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/",
+      "effective_date": "2026-06-22",
+      "notes": "Sections 4-6 establish conditional federal transition milestones and direct publication of proposed FAR rules."
+    },
+    {
+      "id": "NIST-CSWP-39-UPD1",
+      "title": "NIST CSWP 39upd1 — Considerations for Achieving Crypto Agility",
+      "url": "https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final",
+      "effective_date": "2026-06-29",
+      "notes": "Provides crypto-agility strategies and practices; it is not a detector-specific compliance rule."
+    },
+    {
+      "id": "NIST-SP-1800-38B-IPRD",
+      "title": "NIST SP 1800-38B — Public Key Application Discovery Tools (Preliminary Draft)",
+      "url": "https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc",
+      "effective_date": "2023-12-19",
+      "notes": "Preliminary discovery guidance; status must remain visible in downstream reports."
+    }
+  ],
+  "reference_milestones": [
+    {
+      "id": "EO14412-HVA-KEY-ESTABLISHMENT",
+      "date": "2030-12-31",
+      "applicability": "Federal HVA and high-impact systems, excluding National Security Systems, for key establishment.",
+      "source_id": "EO-14412"
+    },
+    {
+      "id": "EO14412-HVA-DIGITAL-SIGNATURE",
+      "date": "2031-12-31",
+      "applicability": "Federal HVA and high-impact systems, excluding National Security Systems, for digital signatures.",
+      "source_id": "EO-14412"
+    },
+    {
+      "id": "EO14412-FAR-PROPOSED-RULE",
+      "date": "2030-12-31",
+      "applicability": "Target compliance date directed for a future proposed FAR rule covering covered contractors; not represented as a final FAR clause.",
+      "source_id": "EO-14412"
+    }
+  ],
+  "rules": [
+    {"algorithms":["RSA","ECDSA","ECDH","EC","DH","DSA"],"status":"TRANSITION_REVIEW_REQUIRED","priority":"HIGH","rationale":"A quantum-vulnerable public-key primitive was referenced. Confirm actual use, data lifetime, system scope, and migration dependency.","source_ids":["EO-14412","NIST-CSWP-39-UPD1"]},
+    {"algorithms":["ML-KEM","ML-DSA","SLH-DSA"],"status":"PQC_CANDIDATE_DETECTED","priority":"REVIEW","rationale":"A PQC algorithm reference was detected. Validate implementation, provider, parameter set, FIPS status, protocol use, and interoperability before making an assurance claim.","source_ids":["EO-14412","NIST-CSWP-39-UPD1"]},
+    {"algorithm_prefix":"UNKNOWN_","status":"MANUAL_RESOLUTION_REQUIRED","priority":"HIGH","rationale":"The API reference does not bind the algorithm. Resolve configuration, key type, mechanism, provider, or runtime evidence.","source_ids":["NIST-SP-1800-38B-IPRD"]},
+    {"algorithms":["PROVIDER_CONFIGURATION","TLS_CIPHER_CONFIGURATION"],"status":"CONTEXT_EVIDENCE","priority":"REVIEW","rationale":"Configuration-related API evidence may affect crypto agility but does not establish an algorithm outcome by itself.","source_ids":["NIST-CSWP-39-UPD1"]}
+  ]
+}
