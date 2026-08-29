@@ -1,0 +1,350 @@
+{
+  "description": "High-signal OpenSSL and PKCS#11 API symbols for the assessment-operated v0.1 detector.",
+  "rules": [
+    {
+      "algorithm": "RSA",
+      "confidence": 0.98,
+      "id": "openssl.rsa_sign",
+      "operation": "SIGN",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "RSA_sign"
+    },
+    {
+      "algorithm": "RSA",
+      "confidence": 0.98,
+      "id": "openssl.rsa_verify",
+      "operation": "VERIFY",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "RSA_verify"
+    },
+    {
+      "algorithm": "RSA",
+      "confidence": 0.98,
+      "id": "openssl.rsa_public_encrypt",
+      "operation": "ENCRYPT",
+      "primitive_family": "PUBLIC_KEY_ENCRYPTION",
+      "provider": "OPENSSL",
+      "symbol": "RSA_public_encrypt"
+    },
+    {
+      "algorithm": "RSA",
+      "confidence": 0.98,
+      "id": "openssl.rsa_private_decrypt",
+      "operation": "DECRYPT",
+      "primitive_family": "PUBLIC_KEY_ENCRYPTION",
+      "provider": "OPENSSL",
+      "symbol": "RSA_private_decrypt"
+    },
+    {
+      "algorithm": "RSA",
+      "confidence": 0.98,
+      "id": "openssl.rsa_generate_key_ex",
+      "operation": "GENERATE_KEY",
+      "primitive_family": "KEY_GENERATION",
+      "provider": "OPENSSL",
+      "symbol": "RSA_generate_key_ex"
+    },
+    {
+      "algorithm": "ECDSA",
+      "confidence": 0.98,
+      "id": "openssl.ecdsa_do_sign",
+      "operation": "SIGN",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "ECDSA_do_sign"
+    },
+    {
+      "algorithm": "ECDSA",
+      "confidence": 0.98,
+      "id": "openssl.ecdsa_do_verify",
+      "operation": "VERIFY",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "ECDSA_do_verify"
+    },
+    {
+      "algorithm": "ECDH",
+      "confidence": 0.98,
+      "id": "openssl.ecdh_compute_key",
+      "operation": "DERIVE_KEY",
+      "primitive_family": "KEY_ESTABLISHMENT",
+      "provider": "OPENSSL",
+      "symbol": "ECDH_compute_key"
+    },
+    {
+      "algorithm": "DH",
+      "confidence": 0.98,
+      "id": "openssl.dh_generate_key",
+      "operation": "GENERATE_KEY",
+      "primitive_family": "KEY_GENERATION",
+      "provider": "OPENSSL",
+      "symbol": "DH_generate_key"
+    },
+    {
+      "algorithm": "DH",
+      "confidence": 0.98,
+      "id": "openssl.dh_compute_key",
+      "operation": "DERIVE_KEY",
+      "primitive_family": "KEY_ESTABLISHMENT",
+      "provider": "OPENSSL",
+      "symbol": "DH_compute_key"
+    },
+    {
+      "algorithm": "UNKNOWN_ASYMMETRIC",
+      "argument_markers": {
+        "EVP_PKEY_DH": {
+          "algorithm": "DH",
+          "confidence": 0.96,
+          "primitive_family": "KEY_ESTABLISHMENT"
+        },
+        "EVP_PKEY_EC": {
+          "algorithm": "EC",
+          "confidence": 0.96,
+          "primitive_family": "PUBLIC_KEY"
+        },
+        "EVP_PKEY_RSA": {
+          "algorithm": "RSA",
+          "confidence": 0.98,
+          "primitive_family": "PUBLIC_KEY"
+        }
+      },
+      "confidence": 0.86,
+      "id": "openssl.evp_pkey_ctx_new_id",
+      "operation": "CREATE_CONTEXT",
+      "primitive_family": "PUBLIC_KEY",
+      "provider": "OPENSSL",
+      "symbol": "EVP_PKEY_CTX_new_id"
+    },
+    {
+      "algorithm": "UNKNOWN_ASYMMETRIC",
+      "argument_markers": {
+        "EC": {
+          "algorithm": "EC",
+          "confidence": 0.88,
+          "primitive_family": "PUBLIC_KEY"
+        },
+        "ML-DSA": {
+          "algorithm": "ML-DSA",
+          "confidence": 0.96,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        },
+        "ML-KEM": {
+          "algorithm": "ML-KEM",
+          "confidence": 0.96,
+          "primitive_family": "KEY_ESTABLISHMENT"
+        },
+        "RSA": {
+          "algorithm": "RSA",
+          "confidence": 0.92,
+          "primitive_family": "PUBLIC_KEY"
+        },
+        "SLH-DSA": {
+          "algorithm": "SLH-DSA",
+          "confidence": 0.96,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        }
+      },
+      "confidence": 0.86,
+      "id": "openssl.evp_pkey_ctx_new_from_name",
+      "operation": "CREATE_CONTEXT",
+      "primitive_family": "PUBLIC_KEY",
+      "provider": "OPENSSL",
+      "symbol": "EVP_PKEY_CTX_new_from_name"
+    },
+    {
+      "algorithm": "UNKNOWN_ASYMMETRIC",
+      "confidence": 0.9,
+      "id": "openssl.evp_pkey_encrypt",
+      "operation": "ENCRYPT",
+      "primitive_family": "PUBLIC_KEY_ENCRYPTION",
+      "provider": "OPENSSL",
+      "symbol": "EVP_PKEY_encrypt"
+    },
+    {
+      "algorithm": "UNKNOWN_ASYMMETRIC",
+      "confidence": 0.9,
+      "id": "openssl.evp_pkey_decrypt",
+      "operation": "DECRYPT",
+      "primitive_family": "PUBLIC_KEY_ENCRYPTION",
+      "provider": "OPENSSL",
+      "symbol": "EVP_PKEY_decrypt"
+    },
+    {
+      "algorithm": "UNKNOWN_KEY_ESTABLISHMENT",
+      "confidence": 0.9,
+      "id": "openssl.evp_pkey_derive",
+      "operation": "DERIVE_KEY",
+      "primitive_family": "KEY_ESTABLISHMENT",
+      "provider": "OPENSSL",
+      "symbol": "EVP_PKEY_derive"
+    },
+    {
+      "algorithm": "UNKNOWN_SIGNATURE",
+      "confidence": 0.9,
+      "id": "openssl.evp_digest_sign_init",
+      "operation": "SIGN_INIT",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "EVP_DigestSignInit"
+    },
+    {
+      "algorithm": "UNKNOWN_SIGNATURE",
+      "confidence": 0.9,
+      "id": "openssl.evp_digest_verify_init",
+      "operation": "VERIFY_INIT",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "EVP_DigestVerifyInit"
+    },
+    {
+      "algorithm": "UNKNOWN_SIGNATURE",
+      "argument_markers": {
+        "ECDSA": {
+          "algorithm": "ECDSA",
+          "confidence": 0.92,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        },
+        "ML-DSA": {
+          "algorithm": "ML-DSA",
+          "confidence": 0.96,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        },
+        "RSA": {
+          "algorithm": "RSA",
+          "confidence": 0.92,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        },
+        "SLH-DSA": {
+          "algorithm": "SLH-DSA",
+          "confidence": 0.96,
+          "primitive_family": "DIGITAL_SIGNATURE"
+        }
+      },
+      "confidence": 0.86,
+      "id": "openssl.evp_signature_fetch",
+      "operation": "FETCH_IMPLEMENTATION",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "OPENSSL",
+      "symbol": "EVP_SIGNATURE_fetch"
+    },
+    {
+      "algorithm": "UNKNOWN_KEM",
+      "argument_markers": {
+        "ML-KEM": {
+          "algorithm": "ML-KEM",
+          "confidence": 0.96,
+          "primitive_family": "KEY_ESTABLISHMENT"
+        }
+      },
+      "confidence": 0.86,
+      "id": "openssl.evp_kem_fetch",
+      "operation": "FETCH_IMPLEMENTATION",
+      "primitive_family": "KEY_ESTABLISHMENT",
+      "provider": "OPENSSL",
+      "symbol": "EVP_KEM_fetch"
+    },
+    {
+      "algorithm": "PROVIDER_CONFIGURATION",
+      "confidence": 0.94,
+      "id": "openssl.ossl_provider_load",
+      "operation": "LOAD_PROVIDER",
+      "primitive_family": "CRYPTO_PROVIDER",
+      "provider": "OPENSSL",
+      "symbol": "OSSL_PROVIDER_load"
+    },
+    {
+      "algorithm": "PROVIDER_CONFIGURATION",
+      "confidence": 0.94,
+      "id": "openssl.openssl_init_crypto",
+      "operation": "INITIALIZE",
+      "primitive_family": "CRYPTO_PROVIDER",
+      "provider": "OPENSSL",
+      "symbol": "OPENSSL_init_crypto"
+    },
+    {
+      "algorithm": "TLS_CIPHER_CONFIGURATION",
+      "confidence": 0.92,
+      "id": "openssl.ssl_ctx_set_cipher_list",
+      "operation": "CONFIGURE",
+      "primitive_family": "TLS_CONFIGURATION",
+      "provider": "OPENSSL",
+      "symbol": "SSL_CTX_set_cipher_list"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_PUBLIC_KEY",
+      "confidence": 0.94,
+      "id": "pkcs11.c_generate_key_pair",
+      "operation": "GENERATE_KEY_PAIR",
+      "primitive_family": "KEY_GENERATION",
+      "provider": "PKCS11",
+      "symbol": "C_GenerateKeyPair"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_SIGNATURE",
+      "confidence": 0.94,
+      "id": "pkcs11.c_sign_init",
+      "operation": "SIGN_INIT",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "PKCS11",
+      "symbol": "C_SignInit"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_SIGNATURE",
+      "confidence": 0.94,
+      "id": "pkcs11.c_verify_init",
+      "operation": "VERIFY_INIT",
+      "primitive_family": "DIGITAL_SIGNATURE",
+      "provider": "PKCS11",
+      "symbol": "C_VerifyInit"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_ENCRYPTION",
+      "confidence": 0.94,
+      "id": "pkcs11.c_encrypt_init",
+      "operation": "ENCRYPT_INIT",
+      "primitive_family": "ENCRYPTION",
+      "provider": "PKCS11",
+      "symbol": "C_EncryptInit"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_ENCRYPTION",
+      "confidence": 0.94,
+      "id": "pkcs11.c_decrypt_init",
+      "operation": "DECRYPT_INIT",
+      "primitive_family": "ENCRYPTION",
+      "provider": "PKCS11",
+      "symbol": "C_DecryptInit"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_KEY_ESTABLISHMENT",
+      "confidence": 0.94,
+      "id": "pkcs11.c_derive_key",
+      "operation": "DERIVE_KEY",
+      "primitive_family": "KEY_ESTABLISHMENT",
+      "provider": "PKCS11",
+      "symbol": "C_DeriveKey"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_KEY_WRAP",
+      "confidence": 0.94,
+      "id": "pkcs11.c_wrap_key",
+      "operation": "WRAP_KEY",
+      "primitive_family": "KEY_MANAGEMENT",
+      "provider": "PKCS11",
+      "symbol": "C_WrapKey"
+    },
+    {
+      "algorithm": "UNKNOWN_HSM_KEY_WRAP",
+      "confidence": 0.94,
+      "id": "pkcs11.c_unwrap_key",
+      "operation": "UNWRAP_KEY",
+      "primitive_family": "KEY_MANAGEMENT",
+      "provider": "PKCS11",
+      "symbol": "C_UnwrapKey"
+    }
+  ],
+  "ruleset_id": "openssl-pkcs11-linux-source-elf",
+  "version": "0.1.0"
+}

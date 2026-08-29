@@ -1,0 +1,50 @@
+{
+  "bundle_id": "bundle_9d8073e8cd4cce2139caf7edd5c5f4f0",
+  "completed_at": "2026-08-29T16:42:13Z",
+  "engine": {
+    "name": "pqc-evidence-kernel",
+    "version": "0.1.0"
+  },
+  "environment": {
+    "machine": "x86_64",
+    "os": "Linux",
+    "python": "3.12.13"
+  },
+  "interpretation_boundary": "Evidence records supported API references and detector coverage only; runtime use, cryptographic absence, regulatory applicability, and compliance are not inferred.",
+  "policy": {
+    "digest": "sha256:e9bcb24920b247d7300d18875022c252a3fdd9bf15cd8fb843db3d42850764d0",
+    "id": "us-federal-pqc-transition-discovery",
+    "version": "0.1.0"
+  },
+  "record_counts": {
+    "coverage": 2,
+    "observations": 6,
+    "policy_evaluations": 6
+  },
+  "ruleset": {
+    "digest": "sha256:d2f8862cbfd5dd700293510723a7557851419a918ae2ac33f91174662946dde2",
+    "id": "openssl-pkcs11-linux-source-elf",
+    "version": "0.1.0"
+  },
+  "scan_id": "acceptance-source-001",
+  "schema_version": "0.1.0",
+  "scope": {
+    "header_extensions": [],
+    "include_binaries": false,
+    "include_snippets": false,
+    "max_file_bytes": 104857600,
+    "source_extensions": [
+      ".c",
+      ".cc",
+      ".cpp",
+      ".cxx"
+    ]
+  },
+  "started_at": "2026-08-29T16:42:13Z",
+  "status": "PASS",
+  "target": {
+    "candidate_count": 2,
+    "kind": "directory",
+    "label": "Golden source fixture"
+  }
+}

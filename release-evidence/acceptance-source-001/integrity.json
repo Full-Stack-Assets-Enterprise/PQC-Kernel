@@ -1,0 +1,36 @@
+{
+  "algorithm": "SHA-256",
+  "bundle_id": "bundle_9d8073e8cd4cce2139caf7edd5c5f4f0",
+  "created_at": "2026-08-29T16:42:13Z",
+  "files": {
+    "coverage.jsonl": {
+      "digest": "sha256:8a89e1abae775300e0ee1055243cb3be11d15a5710a10f0346086306acab86d1",
+      "size": 1168
+    },
+    "detector_rules.json": {
+      "digest": "sha256:df8add1555af8de2c328a34fe8d16fb7f241019f812742f0bcc8148d3ab16354",
+      "size": 9934
+    },
+    "dossier.md": {
+      "digest": "sha256:d1cc99c0cc42b176921578ed4696adb4181a5ed22eed790e3f122065db127e8e",
+      "size": 6558
+    },
+    "observations.jsonl": {
+      "digest": "sha256:a85a4adeb9683f8d790dda3c83bd3c86b3ea00a1a7b85a1530cc383238846bee",
+      "size": 6220
+    },
+    "policy_evaluations.jsonl": {
+      "digest": "sha256:b8877d11303db984911e41784f97f63774eb2145caa0a0051c8e2014a77940bf",
+      "size": 3679
+    },
+    "policy_profile.json": {
+      "digest": "sha256:18cbb2def7802e1f9d1e18f2c9ef5dc17c4956379b62b922d71f285d224720ac",
+      "size": 3928
+    },
+    "scan_manifest.json": {
+      "digest": "sha256:179915ff11a1fb240210e0dc6bc569333118371cb98896abca3d519ee33c0830",
+      "size": 1383
+    }
+  },
+  "schema_version": "0.1.0"
+}
