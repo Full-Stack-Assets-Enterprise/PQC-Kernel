@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pqc-evidence-kernel"
+version = "0.1.0"
+description = "Offline, evidence-first cryptographic discovery for Linux C/C++ assessments."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "PQC Evidence Kernel" }]
+dependencies = []
+
+[project.scripts]
+pqc-evidence = "pqc_evidence.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+pqc_evidence = ["data/rules/*.json", "data/policies/*.json"]
+

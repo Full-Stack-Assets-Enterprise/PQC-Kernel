@@ -1,0 +1,80 @@
+status: APPROVED_FOR_NEXT_GATE
+role_id: ESP-02
+work_item_id: PQC-EK-2026-08-29-001
+version: 0.1.0
+owner: Blaize
+data_classification: internal-development
+authority:
+  allowed:
+    - local implementation
+    - local tests and build
+    - controlled evidence-bundle generation
+  not_exercised:
+    - external publication
+    - production deployment
+    - customer outreach or contractual commitment
+    - legal or compliance certification
+inputs:
+  approved_source_ids:
+    - user-bootstrap-service-brief-2026-08-29
+    - user-evidence-kernel-architecture-2026-08-29
+    - user-research-verification-2026-08-29
+  primary_policy_sources:
+    - https://www.whitehouse.gov/presidential-actions/2026/06/securing-the-nation-against-advanced-cryptographic-attacks/
+    - https://csrc.nist.gov/pubs/cswp/39/upd1/considerations-for-achieving-crypto-agility/final
+    - https://www.nccoe.nist.gov/applied-cryptography/migration-to-pqc
+action_performed: >-
+  Implemented the bounded Python/JSONL assessment wedge with strict evidence,
+  coverage, policy-separation, dossier, and integrity semantics; deferred the
+  capital-intensive platform and research features.
+outputs:
+  artifacts:
+    - src/pqc_evidence
+    - tests
+    - docs
+    - release-evidence/acceptance-source-001
+  acceptance_bundle_id: bundle_9d8073e8cd4cce2139caf7edd5c5f4f0
+  acceptance_integrity_receipt: sha256:cab6f0e221d866f8bd12e31b008a3f60c9faa4425be8ed99bc55e955e28575e2
+provenance:
+  workflow_version: aoc-preflight-plus-esp-02-v1
+  implementation_runtime: Python 3.12.11
+  external_runtime_dependency: GNU readelf for ELF analysis
+quality_evidence:
+  gate_result: PASS
+  tests:
+    command: PYTHONPATH=src python -m unittest discover -s tests -v
+    passed: 13
+    failed: 0
+  compile_check:
+    command: PYTHONPATH=src python -m compileall -q src tests
+    result: PASS
+  dependency_check:
+    command: python -m pip check
+    result: PASS
+  wheel_build:
+    artifact: pqc_evidence_kernel-0.1.0-py3-none-any.whl
+    sha256: bc503660ac1283a211348bf1703463fdff6a19c7e45c27a0369dd1663fa2434e
+  clean_wheel_install:
+    environment: isolated-virtualenv
+    network: disabled-for-install
+    profile_load: PASS
+    acceptance_bundle_verification: PASS
+  acceptance_verification:
+    verified_files: 7
+    verified_records: 14
+    issues: []
+risks_and_uncertainties:
+  - Lexical source detection can miss macro-generated, aliased, indirect, or build-conditional calls.
+  - ELF detection cannot establish runtime execution or recover static/hidden implementations.
+  - Built-in policy output is applicability-gated and is not legal advice or certification.
+  - The bundle is unsigned; origin authenticity requires a retained receipt or later signature layer.
+  - Precision and recall are not claimed beyond the included golden fixtures.
+required_human_decision: >-
+  Approve a canonical repository and controlled real-project/customer proof before
+  external publication, deployment, or commercial assurance claims.
+next_handoff:
+  owner: Blaize
+  required_inputs:
+    - canonical repository identity
+    - approved real-project fixture revisions or customer target
+    - customer data-handling and engagement scope for any external assessment
